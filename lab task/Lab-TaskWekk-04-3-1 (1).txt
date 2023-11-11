@@ -1,0 +1,312 @@
+//First Task.
+public class StoryBook
+{
+	private String isbn;
+	private String bookTitle;
+	private String authorName;
+	private double price;
+	private int availableQuanity;
+	private String catagory;
+	private static double discountRate;
+	
+	public StoryBook()
+	{
+		
+	}
+	public StoryBook(String isbn,String bookTitle,String authorName,double price,int availableQuanity,String catagory)
+	{
+		this.isbn = isbn;
+		this.bookTitle = bookTitle;
+		this.authorName = authorName;
+		this.price = price ;
+		this.availableQuanity = availableQuanity;
+		this.catagory = catagory;
+		
+	}
+	public static void setDiscountRate(double rate)
+	{
+		discountRate = rate;
+	}
+	public static double getDiscounRate()
+	{
+		return discountRate;
+	}
+	//set method 
+	public void setIsbn(String isbn)
+	{
+		 this.isbn = isbn;
+	}
+	public void setBookTitle(String bookTitle)
+	{
+		 this.bookTitle = bookTitle;
+	}
+	public void setAuthorName(String authorName)
+	{
+		  this.authorName = authorName;
+	}
+	public void setPrice(double price)
+	{
+		this.price = price;
+	}
+	public void setAvailavleQuantity(int availableQuanity)
+	{
+		this.availableQuanity = availableQuanity;
+	}
+	public void setCatagory(String Catagory)
+	{
+		this.catagory = catagory;
+	}
+	//get method
+	public String getIsbn()
+	{
+		return isbn;
+	}
+	public String getBookTitle()
+	{
+		return bookTitle;
+	}
+	public String getAuthorName()
+	{
+		return authorName;
+	}
+	public double getPrice()
+	{ 
+		
+		return price;
+	}
+	
+	public int getAvailableQuantity()
+	{
+		return availableQuanity;
+	}
+	public String getCatagory()
+	{
+		return catagory;
+	}
+	
+	public void addQuantity(int amount)
+	{
+		availableQuanity = availableQuanity + amount;
+	}
+	public void sellQuantity(int amount)
+	{
+		availableQuanity = availableQuanity - amount;
+	}
+	
+	public void showDetails()
+	{
+		System.out.println("ISBN:" +isbn );
+		System.out.println("Book Title:" +bookTitle );
+		System.out.println("Author Name:" +authorName );
+		System.out.println("Price:" + price);
+		System.out.println("Availabe Quantity:" + availableQuanity);
+		System.out.println("Catagory:" + catagory);
+		System.out.println();
+    }
+}
+// 2nd task
+public class TextBook
+{
+	private String isbn;
+	private String bookTitle;
+	private String authorName;
+	private double price;
+	private int availableQuanity;
+	private int standard;
+	private static double discountRate;
+	
+	public TextBook()
+	{
+		
+	}
+	public TextBook(String isbn,String bookTitle,String authorName,double price,int availableQuanity,int standard)
+	{
+		this.isbn = isbn;
+		this.bookTitle = bookTitle;
+		this.authorName = authorName;
+		this.price = price ;
+		this.availableQuanity = availableQuanity;
+		this.standard = standard;
+		
+	}
+	public static void setDiscountRate(double rate)
+	{
+		discountRate = rate;
+	}
+	public static double getDiscounRate()
+	{
+		return discountRate;
+	}
+	
+	public void setIsbn(String isbn)
+	{
+		 this.isbn = isbn;
+	}
+	public void setBookTitle(String bookTitle)
+	{
+		 this.bookTitle = bookTitle;
+	}
+	public void setAuthorName(String authorName)
+	{
+		  this.authorName = authorName;
+	}
+	public void setPrice(double price)
+	{
+		this.price = price;
+	}
+	public void setAvailavleQuantity(int availableQuanity)
+	{
+		this.availableQuanity = availableQuanity;
+	}
+	
+	public void setStandard(int standard)
+	{
+		this.standard = standard;
+	}
+	
+	public String getIsbn()
+	{
+		return isbn;
+	}
+	public String getBookTitle()
+	{
+		return bookTitle;
+	}
+	public String getAuthorName()
+	{
+		return authorName;
+	}
+	public double getPrice()
+	{ 
+		
+		return price;
+	}
+	
+	public int getAvailableQuantity()
+	{
+		return availableQuanity;
+	}
+	public int getStandard()
+	{
+		return standard;
+	}
+	
+	public void addQuantity(int amount)
+	{
+		availableQuanity = availableQuanity + amount;
+	}
+	public void sellQuantity(int amount)
+	{
+		availableQuanity = availableQuanity - amount;
+	}
+	
+	public void showDetails()
+	{
+		System.out.println("ISBN:" +isbn );
+		System.out.println("Book Title:" +bookTitle );
+		System.out.println("Author Name:" +authorName );
+		System.out.println("Price:" + price);
+		System.out.println("Availabe Quantity:" + availableQuanity);
+		System.out.println("Standard:" + standard);
+		System.out.println();
+    }
+}
+//main method of two task(Together).
+public class Start
+{
+	 public static void main(String[] args) 
+	{
+	
+	    //StoryBook class
+		StoryBook book1 = new StoryBook("ISBN:24252","The Pavillion","Alex Farguson",450,10,"Travel");
+		book1.addQuantity(4);
+		StoryBook.setDiscountRate(25); //25 mean 25%
+		
+		book1.showDetails();
+		//TextBook class
+		TextBook book2 =new TextBook();
+		book2.setIsbn("ISBN:79476");
+		book2.setBookTitle("WHO MOVED MY CHEESE");
+		book2.setAuthorName("HSGNS");
+		book2.setPrice(900.0);
+		book2.setAvailavleQuantity(4);
+		book2.setStandard(7);
+		book2.sellQuantity(7);
+		
+		book2.showDetails();
+		
+    
+    }
+
+}
+// extra Task
+public class Vechile
+{
+	public String name;;
+	public String model;
+	private int price;
+	public String color;
+	private int speed;
+	
+	
+	
+	public static void country()
+	{
+		System.out.println("This vechile is Made in USA.");
+	}
+	
+	Vechile (String name, String model,int price, String color,int speed)
+	{
+		this.name= name;
+		this.model = model;
+		this.price = price;
+		this.color = color;
+		this.speed = speed;
+	}
+	public void  setPrice(int price)
+	{
+		this.price = price;
+	}
+	public void setSpeed(int speed)
+	{
+		this.speed = speed;
+	}
+	public int getPrice() 
+	{
+		return price;
+	}
+	public int getSpeed() 
+	{
+		return speed;
+		
+	}
+	
+	public void showdetalis()
+	{
+		System.out.println("Name:" + name);
+		System.out.println("Model:" + model);
+		System.out.println("Price:" + price);
+		System.out.println("color:" + color);
+		System.out.println("Speed:" + speed);
+		
+	}
+	
+	public static void main(String [] args)
+	{
+		
+		Vechile bike = new Vechile("Yamaha","v3",1800,"Black",70);
+		bike.name = "Yamaha";
+		bike.model = "V3";
+		bike.color = "Black";
+		bike.setPrice(1800);
+		bike.setSpeed(70);
+		Vechile.country();
+		bike.showdetalis();
+		
+		Vechile car = new Vechile("Mazda","ew3",4314,"Red",100);
+		car.showdetalis();
+	}
+	
+	
+	
+}

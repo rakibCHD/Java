@@ -1,0 +1,49 @@
+CREATE TABLE department (
+    deptid NUMBER(3) PRIMARY KEY,
+    dept_name VARCHAR(6) CHECK (dept_name IN ('CSE', 'EEE', 'BBA', 'Eng', 'Ach')),
+    budget NUMBER(6) DEFAULT 0
+);
+
+insert into department values('1','CSE','50000');
+insert into department values('2','EEE','20000');
+insert into department values('3','BBA','70000');
+insert into department values('4','Eng','90000');
+insert into department values('5','Ach','10000');
+
+select *from department;
+
+
+CREATE TABLE course (
+  crs_id NUMBER(4) PRIMARY KEY,
+  crs_name VARCHAR2(20) NOT NULL,
+  deptid NUMBER(3) REFERENCES department(deptid)
+);
+
+insert into course values('101','IP','1');
+insert into course values('102','JAVA','2');
+
+select *from course;CREATE TABLE department (
+    deptid NUMBER(3) PRIMARY KEY,
+    dept_name VARCHAR(6) CHECK (dept_name IN ('CSE', 'EEE', 'BBA', 'Eng', 'Ach')),
+    budget NUMBER(6) DEFAULT 0
+);
+
+insert into department values('1','CSE','10000');
+insert into department values('2','EEE','20000');
+insert into department values('3','BBA','50000');
+insert into department values('4','Eng','69000');
+insert into department values('5','Ach','10000');
+
+select *from department;
+
+
+CREATE TABLE course (
+  crs_id NUMBER(4) PRIMARY KEY,
+  crs_name VARCHAR2(20) NOT NULL,
+  deptid NUMBER(3) REFERENCES department(deptid)
+);
+
+insert into course values('101','IP','1');
+insert into course values('102','JAVA','2');
+
+select *from course;
